@@ -1,0 +1,36 @@
+{
+  "name": "vscode-extension",
+  "displayName": "Repository Graph Assistant",
+  "description": "Coding assistant backed by a local repository graph",
+  "version": "0.1.0",
+  "private": true,
+  "publisher": "local-dev",
+  "engines": {
+    "vscode": "^1.90.0",
+    "node": ">=22.12.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "repoGraph.showStatus",
+        "title": "Repository Graph: Show Status",
+        "category": "Repository Graph"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "bundle": "node esbuild.mjs",
+    "bundle:watch": "node esbuild.mjs --watch"
+  },
+  "dependencies": {
+    "agent-core": "workspace:*",
+    "graph-core": "workspace:*",
+    "shared": "workspace:*"
+  }
+}

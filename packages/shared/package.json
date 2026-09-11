@@ -1,0 +1,12 @@
+{
+  "name": "shared",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Contracts shared across the agent, graph, and editor packages",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib"],
+  "scripts": {
+    "build": "tsc --build"
+  }
+}

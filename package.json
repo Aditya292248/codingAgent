@@ -1,0 +1,36 @@
+{
+  "name": "coding-agent-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VS Code coding assistant and local repository graph engine",
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json && pnpm --filter vscode-extension run bundle",
+    "typecheck": "tsc --build tsconfig.build.json && tsc --project fixtures/typescript-repo/tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "node --test \"tests/**/*.test.mjs\"",
+    "clean": "tsc --build tsconfig.build.json --clean && rimraf apps/vscode-extension/dist"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^20.19.9",
+    "@types/vscode": "^1.90.0",
+    "agent-core": "workspace:*",
+    "esbuild": "^0.25.10",
+    "eslint": "^9.39.1",
+    "graph-cli": "workspace:*",
+    "graph-core": "workspace:*",
+    "rimraf": "^6.0.1",
+    "shared": "workspace:*",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
