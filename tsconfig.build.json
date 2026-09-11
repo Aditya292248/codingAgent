@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/shared" },
+    { "path": "./packages/graph-core" },
+    { "path": "./packages/agent-core" },
+    { "path": "./packages/graph-cli" },
+    { "path": "./apps/vscode-extension" }
+  ]
+}
